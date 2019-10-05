@@ -1,0 +1,21 @@
+{
+  "name": "webcrawler",
+  "version": "0.0.0",
+  "description": "A simple webcrawler written in JavaScript",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "author": "Tikva",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^0.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.3",
+    "request": "^2.65.0",
+    "url-parse": "^1.0.5"
+  }
+}
