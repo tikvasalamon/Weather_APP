@@ -1,0 +1,114 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+}
+.app-container{
+    box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 100px;
+}
+.layover{
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    padding: 20px;
+    background-color:rgba(0,0,0,.3);
+}
+.flex-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+
+}
+.inputs-container{
+    box-shadow: 0 0 5px 0px rgba(0,0,0,.8);
+    background-image: url('./assets/images/bg.jpg');
+    background-size:cover;
+    background-position: center;
+}
+.inputs-container input, .inputs-container button{
+    padding: 5px;
+    font-size: 22px;
+}
+.inputs-container button{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color: #005cbf;
+    color: white;
+}
+.inputs-container input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 22px;
+}
+.input-group{
+    border-bottom: 2px solid rgba(255,255,255,.6);
+    margin-right: 7px;
+    align-items: center;
+    display: flex;
+}
+.input-group i{
+    color: #005cbf;
+    font-size: 22px;
+}
+.footer{
+    background-color: #005cbf;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: white;
+}
+
+.loader{
+    display:block;
+    margin: auto;
+}
+.loader img{
+    display: block;
+    margin: auto;
+}
+
+
+@media screen and (max-width:550px){
+    .inputs-container input{
+        width: 100%;
+        margin:5px;
+    }
+    .inputs-container button{
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 10px;
+        border: 2px solid rgba(255,255,255,.4);
+    }
+    .layover{
+        display: block;
+    }
+    .loader{
+       flex:100%;
+    }
+    .loader img{
+        width: 50px;
+        display: block;
+        margin: 15px auto;
+    }
+}
+
+::-webkit-input-placeholder { /* Edge */
+    color: rgba(255,255,255,.7);
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgba(255,255,255,.7);
+  }
+  
+  ::placeholder {
+    color: rgba(255,255,255,.7);
+  }
