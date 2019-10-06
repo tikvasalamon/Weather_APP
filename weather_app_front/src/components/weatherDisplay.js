@@ -8,6 +8,7 @@ const WeatherDisplay = (props) => {
     const [expand,setExpand] = useState(false);
     const [cardClass,setCardClass] = useState(cardClasss)
 
+    //changes the div class for expanig or unexpending
     const expandCard = () => {
         if (!expand) {
             setCardClass('weather-card expand');

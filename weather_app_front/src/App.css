@@ -10,17 +10,18 @@ body{
     padding-bottom: 100px;
 }
 .layover{
-    display: flex;
+    background-color:rgba(0,0,0,.3);
+}
+.inputs-flex-container{
     justify-content: center;
+    display: flex;
     flex-wrap:wrap;
     padding: 20px;
-    background-color:rgba(0,0,0,.3);
 }
 .flex-container{
     display: flex;
     justify-content: center;
     flex-wrap:wrap;
-
 }
 .inputs-container{
     box-shadow: 0 0 5px 0px rgba(0,0,0,.8);
@@ -46,6 +47,16 @@ body{
     background-color: transparent;
     color: white;
     font-size: 22px;
+}
+.errors-wrapper {
+    display: flex;
+    color: red;
+    font-size: 13px;
+    justify-content: center;
+    font-weight: bold;
+}
+.errors-wrapper p{
+    margin: 0px 0px 5px 0px;
 }
 .input-group{
     border-bottom: 2px solid rgba(255,255,255,.6);
@@ -88,7 +99,7 @@ body{
         margin-top: 10px;
         border: 2px solid rgba(255,255,255,.4);
     }
-    .layover{
+    .inputs-flex-container{
         display: block;
     }
     .loader{

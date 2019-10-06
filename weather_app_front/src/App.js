@@ -22,7 +22,8 @@ class App extends Component {
   state = {
     country: '',
     city: '',
-    search: false
+    search: false,
+    errors: ''
   }
 
   handleChange = event => {
@@ -35,12 +36,30 @@ class App extends Component {
   };
 
   getCityWeather = () => {
-    if (this.countryInput !== '' && this.cityInput !== '') {
+    // testing if it's only english letters - 
+    if (/[^a-z]/i.test(this.countryInput) || /[^a-z]/i.test(this.cityInput)) {
+
+      this.setState({
+        errors: 'Please use English',
+        search: false
+      })
+    }
+
+    //testing if one of the fields is empty
+    else if (this.countryInput !== '' && this.cityInput !== '') {
       this.setState({
         country: this.countryInput,
         city: this.cityInput,
-        search: true
-      }) 
+        search: true,
+        errors: ''
+      })
+    }
+    else {
+      // one of the fields is empty
+      this.setState({
+        errors: 'Please set both fields',
+        search: false
+      })
     }
   }
 
@@ -48,29 +67,32 @@ class App extends Component {
     return (
       <div className="app-container">
         <div className="inputs-container">
-          <div class="layover">
+          <div className="layover">
 
-            <div className="input-group">
-            <i class="fas fa-globe-americas"></i>
-              <input
-                type="text"
-                name="country"
-                placeholder="Country..."
-                onChange={this.handleChange}
-              />
+            <div className="inputs-flex-container">
+              <div className="input-group">
+                <i className="fas fa-globe-americas"></i>
+                <input
+                  type="text"
+                  name="country"
+                  placeholder="Country..."
+                  onChange={this.handleChange}
+                />
+              </div>
+
+              <div className="input-group">
+                <i className="fas fa-city"></i>
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="City..."
+                  onChange={this.handleChange}
+                />
+              </div>
+
+              <button onClick={() => this.getCityWeather()}><i class="fas fa-search"></i></button>
             </div>
-
-            <div className="input-group">
-            <i class="fas fa-city"></i>
-              <input
-                type="text"
-                name="city"
-                placeholder="City..."
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <button onClick={() => this.getCityWeather()}><i class="fas fa-search"></i></button>
+            {this.state.errors !== '' && <div className="errors-wrapper"><p>{this.state.errors}</p></div>}
           </div>
         </div>
 
@@ -90,9 +112,9 @@ class App extends Component {
             })
           }
         </div>
-        
+
         <div className="footer">
-            <p>&copy; Tikva Salamon</p>
+          <p>&copy; Tikva Salamon</p>
         </div>
       </div>
     );
