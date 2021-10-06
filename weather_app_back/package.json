@@ -16,6 +16,6 @@
     "express": "^4.17.1",
     "nodemon": "^1.19.3",
     "request": "^2.65.0",
-    "url-parse": "^1.0.5"
+    "url-parse": "^1.5.2"
   }
 }
